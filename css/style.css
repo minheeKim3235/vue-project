@@ -390,6 +390,9 @@ section h2 {
     margin-bottom: 20px;
     line-height: 1.5rem;
 }
+#skills .text p {
+    word-break: keep-all;
+}
 #skills .text p span {
     display: inline-block;
     margin: 2px;
