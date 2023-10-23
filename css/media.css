@@ -280,7 +280,14 @@
         margin: 80px auto;
         transform: translate(0, 0) !important;
     }
+    #works .works_detail figure.pc {
+        width: 82vw;
+    }
     #works .works_detail figure.tab {
+        width: 85vw;
         transform: translateX(-5%) !important;
+    }
+    #works .works_detail figure.mobile {
+        width: 60vw;
     }
 }
