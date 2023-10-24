@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/6b28c831c1.js" crossorigin="anonymous" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/6b28c831c1.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -175,16 +175,13 @@
                 target="frAttachFiles" name="contactForm" class="gform">
                 <label for="name"><i class="fa-solid fa-user"></i></label><input type="text" placeholder="이름" id="name"
                     name="name" autocomplete="username" required />
-                <label for="mail"><i class="fa-solid fa-envelope"></i></label><input type="maiil" placeholder="메일"
-                    name="email" id="mail" autocomplete="email" required>
+                <label for="mail"><i class="fa-solid fa-envelope"></i></label><input type="mail" placeholder="메일"
+                    name="email" id="mail" autocomplete="email" required />
                 <label for="title"><i class="fa-solid fa-pen"></i></label><input type="text" placeholder="제목" id="title"
-                    name="contactText" autocomplete="off" required>
-                <textarea name="message" cols="30" rows="10" placeholder="내용을 입력하세요." autocomplete="off"></textarea
-                    required>
+                    name="contactText" autocomplete="off" required />
+                <textarea name="message" cols="30" rows="10" placeholder="내용을 입력하세요." autocomplete="off"
+                    required></textarea>
                 <button type="submit"><i class="fa-solid fa-paper-plane"></i> SEND MESSAGE</button>
-                <style>
-
-                </style>
                 <div style="display:none" class="thankyou_message">
                     <div class="inner_wrap">
                         <h2><em><i class="fa-solid fa-envelope-circle-check"></i><br />
@@ -199,7 +196,7 @@
         </section>
     </main>
     <script src="js/script.js"></script>
-    <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+    <script data-cfasync="false" src="js/form-submission-handler.js"></script>
 </body>
 
 </html>
