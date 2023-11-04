@@ -238,11 +238,7 @@ $(window).bind("load", function () {
     const worksImage = targetArticle.querySelector("figure img").getAttribute("src");
     const figureType = targetArticle.getAttribute("rel");
 
-    worksDetail.find(".img_wrap img").attr("id", "");
-    worksDetail.find(".works_year").text(worksYear);
-    worksDetail.find(".works_title").text(worksTitle);
-    worksDetail.find(".works_desc").html(worksDesc);
-    worksDetail.find(".works_tags").html(worksTags);
+    
     
     if (targetArticle.querySelector("figure img").classList.contains("haveGif")) {
       worksDetail.find(".img_wrap img").attr("src", worksImage.replace(/.png/g, ".gif"));
@@ -252,6 +248,11 @@ $(window).bind("load", function () {
         "id" : "slideUp"
       });
     }
+    worksDetail.find(".img_wrap img").attr("id", "");
+    worksDetail.find(".works_year").text(worksYear);
+    worksDetail.find(".works_title").text(worksTitle);
+    worksDetail.find(".works_desc").html(worksDesc);
+    worksDetail.find(".works_tags").html(worksTags);
 
     worksDetail.find("figure").removeClass().addClass(figureType);
 
