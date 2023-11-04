@@ -231,13 +231,14 @@ $(window).bind("load", function () {
     getDetail(e.currentTarget);
   }
   function getDetail(targetArticle) {
+    
     const worksYear = targetArticle.querySelector(".year").innerText;
     const worksTitle = targetArticle.querySelector(".title").innerText;
     const worksDesc = targetArticle.querySelector(".desc").innerHTML;
     const worksTags = targetArticle.querySelector(".tags").innerHTML;
     const worksImage = targetArticle.querySelector("figure img").getAttribute("src");
     const figureType = targetArticle.getAttribute("rel");
-
+    worksDetail.find(".img_wrap img").attr("src", "");
     
     
     if (targetArticle.querySelector("figure img").classList.contains("haveGif")) {
