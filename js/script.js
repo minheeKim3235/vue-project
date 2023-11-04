@@ -238,8 +238,6 @@ $(window).bind("load", function () {
     const worksTags = targetArticle.querySelector(".tags").innerHTML;
     const worksImage = targetArticle.querySelector("figure img").getAttribute("src");
     const figureType = targetArticle.getAttribute("rel");
-    worksDetail.find(".img_wrap img").attr("src", "");
-    
     
     if (targetArticle.querySelector("figure img").classList.contains("haveGif")) {
       worksDetail.find(".img_wrap img").attr("src", worksImage.replace(/.png/g, ".gif"));
@@ -249,13 +247,27 @@ $(window).bind("load", function () {
         "id" : "slideUp"
       });
     }
-    worksDetail.find(".img_wrap img").attr("id", "");
-    worksDetail.find(".works_year").text(worksYear);
-    worksDetail.find(".works_title").text(worksTitle);
-    worksDetail.find(".works_desc").html(worksDesc);
-    worksDetail.find(".works_tags").html(worksTags);
 
-    worksDetail.find("figure").removeClass().addClass(figureType);
+    function loadImage(url) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = () => reject(new Error(`Failed to load image from ${url}`));
+        image.src = url;
+      });
+    }
+    loadImage(worksImage).then(image => {
+      worksDetail.find(".img_wrap img").attr("id", "");
+      worksDetail.find(".works_year").text(worksYear);
+      worksDetail.find(".works_title").text(worksTitle);
+      worksDetail.find(".works_desc").html(worksDesc);
+      worksDetail.find(".works_tags").html(worksTags);
+      worksDetail.find("figure").removeClass().addClass(figureType);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+    
 
     let currentId = parseInt(targetArticle.getAttribute("aria-label").split("/")[0]);
 
