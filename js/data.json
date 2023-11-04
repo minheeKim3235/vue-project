@@ -35,7 +35,7 @@
             "title": "유니브",
             "desc": "제약, 헬스케어 전문 마케팅 에이전시 프리랜서 작업<br />외주 메일링 퍼블리싱<br /> HTML5와 CSS 애니메이션 구현",
             "image": [
-                "works_univ.png",
+                "works_univ.webp",
                 "works_univ.gif"
             ],
             "type": "tab",
@@ -50,7 +50,7 @@
             "title": "2022 인디게임페스티벌 ",
             "desc": "2022 인디게임페스티벌 웹사이트 제작<br />웹 및 모바일 사이트 디자인 및 퍼블리싱<br />반응형 디자인",
             "image": [
-                "works_indie.png",
+                "works_indie.webp",
                 "works_indie.gif"
             ],
             "type": "pc",
@@ -67,7 +67,7 @@
             "title": "엔투게임",
             "desc": "PC 웹게임 사이트 리뉴얼<br /> 디자인 및 퍼블리싱 기여 100%",
             "image": [
-                "works_ntogame.png",
+                "works_ntogame.webp",
                 "works_ntogame.gif"
             ],
             "type": "pc",
@@ -82,7 +82,7 @@
             "year": "2016",
             "title": "CJ제일제당",
             "desc": "웹 및 모바일 사이트 퍼블리싱 운영<br />컨텐츠 유지보수, 사용자 참여 이벤트 퍼블리싱",
-            "image": "works_cheiljedang.png",
+            "image": "works_cheiljedang.webp",
             "type": "pc",
             "tags": [
                 "HTML",
@@ -95,7 +95,7 @@
             "title": "Girl's Education",
             "desc": "CJ와 & 유네스코 주최 캠페인 페이지 디자인<br />스타애장품 경매, 구매 페이지 및 이벤트성 기부 페이지 디자인 작업<br />디자인 시안 기여 100%",
             "image": [
-                "works_girls.png",
+                "works_girls.webp",
                 "works_girls.gif"
             ],
             "type": "pc",
@@ -108,7 +108,7 @@
             "year": "2014",
             "title": "CJ그룹",
             "desc": "사내 인트라넷 및 웹사이트 운영<br />디자인 및 퍼블리싱 지원",
-            "image": "works_cj.png",
+            "image": "works_cj.webp",
             "type": "pc",
             "tags": [
                 "Photoshop",
@@ -121,7 +121,7 @@
             "year": "2013",
             "title": "CJ CGV",
             "desc": "CGV영화관 웹사이트 시안<br />웹사이트 개편 시안 작업으로 사업 수주",
-            "image": "works_cgv.png",
+            "image": "works_cgv.webp",
             "type": "pc",
             "tags": [
                 "Photoshop",
@@ -132,7 +132,7 @@
             "year": "2013",
             "title": "CJ 도너스캠프",
             "desc": "웹 및 모바일 사이트 개편<br />웹접근성 준수 사이트<br />모바일 디자인 기여 100%, 퍼블리싱 지원",
-            "image": "works_donors.png",
+            "image": "works_donors.webp",
             "type": "mobile",
             "tags": [
                 "Photoshop",
@@ -144,7 +144,7 @@
             "year": "2012",
             "title": "(주)온라인파워스",
             "desc": "웹 및 모바일 사이트 개편<br />반응형 디자인, parallex effect",
-            "image": "works_online.png",
+            "image": "works_online.webp",
             "type": "pc",
             "tags": [
                 "HTML",
@@ -157,7 +157,7 @@
             "title": "인피니티 헬스케어",
             "desc": "스마트넷 클라우드 웹사이트 제작<br />디자인 및 퍼블리싱 기여 100%",
             "image": [
-                "works_infinit.png",
+                "works_infinit.webp",
                 "works_infinit.gif"
             ],
             "type": "pc",
