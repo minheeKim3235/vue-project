@@ -800,7 +800,7 @@ section h2 {
     height: 50px;
     font-size: 0.825rem;
     color: #fff;
-    background: rgba(255, 255, 255, .1);
+    background: #697a90;
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 50vh;
     z-index: 1;
@@ -816,7 +816,7 @@ section h2 {
 }
 #contact input::placeholder,
 #contact textarea::placeholder {
-    color: rgba(255, 255, 255, .5);
+    color: #fff;
 }
 #contact input:focus,
 #contact textarea:focus {
