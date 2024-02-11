@@ -167,8 +167,13 @@ function getJSONWorks() {
           }
         str += `</p>
                 <figure style='background-color: #${randomColor[randomBg]}'>`;
-          if (typeof(dataWorks.image) == "object") {   
-            str +=  `<img src='images/works/${dataWorks.image[0]}' alt="" class="image haveGif">`;
+          if (typeof(dataWorks.image) == "object") {
+            if (dataWorks.image[1].includes('.mp4')) {
+              console.log('this is mp4');
+            } else {
+              str +=  `<img src='images/works/${dataWorks.image[0]}' alt="" class="image haveGif">`;
+            }
+            
           } else {
             str += `<img src='images/works/${dataWorks.image}' alt="" class="image">`;
           }

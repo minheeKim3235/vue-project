@@ -33,9 +33,9 @@
         {
             "year": "2024",
             "title": "이투스 교육",
-            "desc": "제약, 헬스케어 전문 마케팅 에이전시 프리랜서 작업<br />외주 메일링 퍼블리싱<br /> HTML5와 CSS 애니메이션 구현",
-            "image": "works_etoos.webp",
-            "type": "tab",
+            "desc": "국내 온·오프라인 입시 교육 학원<br />웹 및 모바일 사이트 외주<br /> 운영 및 이벤트 페이지 구현",
+            "image": [ "works_etoos.webp", "works_etoos.mp4" ],
+            "type": "pc",
             "tags": [
                 "HTML",
                 "CSS3",
