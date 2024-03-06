@@ -245,8 +245,10 @@ $(window).bind("load", function () {
     const figureType = targetArticle.getAttribute("rel");
     
     if (targetArticle.querySelector("figure img").classList.contains("haveGif")) {
+      worksDetail.find(".img_wrap img").attr('src', '');
       worksDetail.find(".img_wrap img").attr("src", worksImage.replace(/.webp/g, ".gif"));
     } else {
+      worksDetail.find(".img_wrap img").attr('src', '');
       worksDetail.find(".img_wrap img").attr({
         "src": worksImage,
         "id" : "slideUp"
