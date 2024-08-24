@@ -1,3 +1,6 @@
+export { default as Accordion } from '../../components/Accordion.vue'
+export { default as AccordionItem } from '../../components/AccordionItem.vue'
+export { default as ColumnList } from '../../components/ColumnList.vue'
 export { default as NuxtLogo } from '../../components/NuxtLogo.vue'
 export { default as Tutorial } from '../../components/Tutorial.vue'
 

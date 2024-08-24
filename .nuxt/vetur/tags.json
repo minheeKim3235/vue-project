@@ -1,4 +1,13 @@
 {
+  "Accordion": {
+    "description": "Auto imported from components/Accordion.vue"
+  },
+  "AccordionItem": {
+    "description": "Auto imported from components/AccordionItem.vue"
+  },
+  "ColumnList": {
+    "description": "Auto imported from components/ColumnList.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },

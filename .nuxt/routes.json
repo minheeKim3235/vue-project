@@ -1,5 +1,19 @@
 [
   {
+    "name": "lifecare",
+    "path": "/lifecare",
+    "component": "/Users/minheekim/스터디/GitHub/vue-project/pages/lifecare.vue",
+    "chunkName": "pages/lifecare",
+    "_name": "_49eb54b1"
+  },
+  {
+    "name": "teacher",
+    "path": "/teacher",
+    "component": "/Users/minheekim/스터디/GitHub/vue-project/pages/teacher.vue",
+    "chunkName": "pages/teacher",
+    "_name": "_7494d76e"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/minheekim/스터디/GitHub/vue-project/pages/index.vue",
