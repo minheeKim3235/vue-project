@@ -1,6 +1,6 @@
 <template>
   <div class="accordion_item">
-    <button class="accordion_header" @click="toggle">
+    <button class="accordion_header" :class="{'is_open': isActive }" @click="toggle">
       <div v-if="$slots.title">
         <slot name="title"></slot>
       </div>
@@ -83,6 +83,51 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.accordion_item {
+  width: 100%;
+}
+.accordion_header {
+  position: relative;
+  display: block;
+  padding: 0 0 0 30px;
+  width: 100%;
+  font-size: 22px;
+  color: #222;
+  line-height: 68px;
+  text-align: left;
+  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+
+  &:before {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    width: 1px;
+    height: 23px;
+    background: #d5d5d5;
+    margin: -11px 11px 0 0;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    width: 23px;
+    height: 1px;
+    background: #d5d5d5;
+  }
+
+  &.is_open {
+    &:before {
+      display: none;
+    }
+    &:after {
+      background: #5c5c5c;
+    }
+  }
+}
 .accordion_content {
   overflow: hidden;
   &.accordion_expanded {
