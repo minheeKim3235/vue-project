@@ -11,7 +11,22 @@
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
+  "Radio": {
+    "description": "Auto imported from components/Radio.vue"
+  },
+  "RadioGroup": {
+    "description": "Auto imported from components/RadioGroup.vue"
+  },
+  "SelectBrand": {
+    "description": "Auto imported from components/SelectBrand.vue"
+  },
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"
+  },
+  "PubTeacherList": {
+    "description": "Auto imported from components/pub/TeacherList.vue"
+  },
+  "PubTeacherView": {
+    "description": "Auto imported from components/pub/TeacherView.vue"
   }
 }

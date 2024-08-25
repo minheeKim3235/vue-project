@@ -20,5 +20,7 @@ const rules = ref([
 </script>
 
 <style lang="scss" scoped>
-
+.accordion_item {
+  margin-bottom: -1px;
+}
 </style>

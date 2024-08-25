@@ -4,15 +4,14 @@ $font-default: 'Pretendard';
 html {
   width: 100%;
   font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%
+  // -webkit-text-size-adjust: 100%;
+  // -ms-text-size-adjust: 100%
 }
 
 body {
   background-color: #fff;
   *word-break: break-all;
-  -ms-word-break: break-all;
-  min-width: 1200px
+  -ms-word-break: break-all
 }
 
 body,
@@ -54,7 +53,8 @@ button,
 pre,
 input {
   margin: 0;
-  padding: 0
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img,

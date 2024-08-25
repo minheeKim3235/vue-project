@@ -1,5 +1,5 @@
 <template>
-  <ul class="common_column">
+  <ul class="common_column" :class="addClass">
     <li v-for="(item, i) in items" :key="i">
       <slot v-bind="{ item, i }" />
     </li>
@@ -13,7 +13,8 @@ import { ref, onMounted } from 'vue';
 const props = defineProps({
   items: [Array, Object],
   columns: Number,
-  gap: Number
+  gap: Number,
+  addClass: String
 });
 
 // data 
@@ -35,10 +36,8 @@ onMounted(() => {
   align-items: stretch;
   gap: v-bind(getGap);
   width: 100%;
-  border: 1px solid blue;
   li {
     width: v-bind(columnWidth);
-    border: 1px solid red;
     box-sizing: border-box;
   }
 }
