@@ -32,6 +32,19 @@
     "works": [
         {
             "year": "2024",
+            "title": "이투스북 디온",
+            "desc": "전자책 태블릿 앱<br />앱뷰 화면 구현",
+            "image": "works_dion.webp",
+            "type": "tab",
+            "tags": [
+                "vue3",
+                "scss",
+                "Javascript",
+                "Git"
+            ]
+        },
+        {
+            "year": "2024",
             "title": "이투스 교육",
             "desc": "국내 온·오프라인 입시 교육 학원<br />웹 및 모바일 사이트 외주<br /> 운영 및 이벤트 페이지 구현",
             "image": "works_etoos.webp",

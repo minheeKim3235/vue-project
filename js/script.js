@@ -216,6 +216,11 @@ $(window).bind("load", function () {
         spaceBetween: 40,
       },
     },
+    mousewheel: {
+      enabled: true,
+      releaseOnEdges: true
+    },
+    speed: 0
   });
 
   // Works list Detail
