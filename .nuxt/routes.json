@@ -2,22 +2,22 @@
   {
     "name": "lifecare",
     "path": "/lifecare",
-    "component": "/Users/minheekim/스터디/GitHub/vue-project/pages/lifecare.vue",
+    "component": "/Users/etoos/GitHub/vue-project/pages/lifecare.vue",
     "chunkName": "pages/lifecare",
-    "_name": "_49eb54b1"
+    "_name": "_105ee464"
   },
   {
     "name": "teacher",
     "path": "/teacher",
-    "component": "/Users/minheekim/스터디/GitHub/vue-project/pages/teacher.vue",
+    "component": "/Users/etoos/GitHub/vue-project/pages/teacher.vue",
     "chunkName": "pages/teacher",
-    "_name": "_7494d76e"
+    "_name": "_6674f29e"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/minheekim/스터디/GitHub/vue-project/pages/index.vue",
+    "component": "/Users/etoos/GitHub/vue-project/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_85a7ad44"
+    "_name": "_1d94653e"
   }
 ]
