@@ -37,11 +37,10 @@ header {
       width: 90vw;
       height: 70px;
       transition: .5s all;
-      gap: 70px;
+      gap: 5vw;
       li {
         position: relative;
         padding: 0 1.5vw;
-        min-width: 115px;
         max-width: 240px;
         font: 500 1.125rem/2rem var(--font-tit);
         color: var(--color-dark);
@@ -53,6 +52,39 @@ header {
           transition: .3s color linear;
           text-transform: uppercase;
         }
+        &:nth-of-type(2) {
+          order: 1;
+        }
+        &:nth-of-type(3) {
+          order: 2;
+        }
+        &:nth-of-type(4) {
+          order: 4;
+        }
+        &:nth-of-type(5) {
+          order: 5;
+        }
+        &.logo {
+          order: 3;
+          button {
+            display: block;
+            margin: 0 auto;
+            max-width: 70px;
+            width: var(--logo-height);
+            aspect-ratio: 1;
+            font-size: 0;
+            line-height: 0;
+            svg path {
+              fill: var(--color-dark);
+              transition: 1s fill linear;
+            }
+          }
+          &.change {
+            button svg path {
+              fill: var(--color-light);
+            }
+          }
+        }
       }
       &.on li button {
         padding: 0 10px;
@@ -62,28 +94,6 @@ header {
         &.on {
           background: rgba(206, 219, 234, .35);
         }
-      }
-    }
-  }
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    button {
-      display: block;
-      margin: 0 auto;
-      max-width: 70px;
-      width: var(--logo-height);
-      aspect-ratio: 1;
-      line-height: 0;
-      svg path {
-        fill: var(--color-dark);
-        transition: 1s fill linear;
-      }
-    }
-    &.change {
-      button svg path {
-        fill: var(--color-light);
       }
     }
   }

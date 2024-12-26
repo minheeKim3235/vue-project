@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Intro />
   </div>
 </template>
 <script setup>

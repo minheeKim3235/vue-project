@@ -34,3 +34,15 @@ button {
   all: unset;
   cursor: pointer;
 }
+section {
+  overflow: hidden;
+  position: relative;
+  padding: 100px 0;
+  width: 100%;
+  h2 {
+    margin-top: 100px;
+    text-align: center;
+    font: 200 7vw/1 var(--font-tit);
+    letter-spacing: -5px;
+  }
+}
