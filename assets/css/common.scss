@@ -34,11 +34,17 @@ button {
   all: unset;
   cursor: pointer;
 }
+.home_wrap {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+}
 section {
   overflow: hidden;
   position: relative;
-  padding: 100px 0;
   width: 100%;
+  scroll-snap-align: start;
   h2 {
     margin-top: 100px;
     text-align: center;

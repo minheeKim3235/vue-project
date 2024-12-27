@@ -1,0 +1,205 @@
+{
+    "skills": [
+        {
+            "name": "Photoshop",
+            "description": "<span>디자인 및 편집 작업</span>을 능숙하게 수행합니다.",
+            "icon": "ps"
+        },
+        {
+            "name": "Illustrator",
+            "description": "다양한 사용자 환경을 고려한 <span>백터 이미지 작업</span>이 가능합니다.",
+            "icon": "ai"
+        },
+        {
+            "name": "HTML5",
+            "description": "<span>웹표준</span>과 <span>접근성</span>을 준수하고 SEO 최적화를 위한 <span>시멘틱 마크업</span>을 추구합니다.",
+            "icon": "html"
+        },
+        {
+            "name": "CSS3",
+            "description": "CSS3를 통해 <span>다양한 효과</span> 및 <span>에니메이션</span>, <span>화면 전환</span> 작업이 능숙하며 <span>반응형 웹</span>에도 대응 합니다.",
+            "icon": "css"
+        },
+        {
+            "name": "Javascript",
+            "description": "<span>ES6+</span>, <span>jQuery</span> 문법을 사용한 플러그인 및 API 사용을 통한 동적 화면 구성이 가능합니다.",
+            "icon": "js"
+        },
+        {
+            "name": "React",
+            "description": "SPA 사이트를 위한 리엑트 프레임워크를 익히는 중입니다.",
+            "icon": "react"
+        },
+        {
+            "name": "Vue",
+            "description": "SPA 사이트를 위한 리엑트 프레임워크를 익히는 중입니다.",
+            "icon": "vue"
+        }
+    ],
+    "works": [
+        {
+            "year": "2024",
+            "title": "이투스북 디온",
+            "desc": "전자책 태블릿 앱<br />앱뷰 화면 구현",
+            "image": "works_dion.webp",
+            "type": "tab",
+            "tags": [
+                "vue3",
+                "scss",
+                "Javascript",
+                "Git"
+            ]
+        },
+        {
+            "year": "2024",
+            "title": "이투스 교육",
+            "desc": "국내 온·오프라인 입시 교육 학원<br />웹 및 모바일 사이트 외주<br /> 운영 및 이벤트 페이지 구현",
+            "image": "works_etoos.webp",
+            "type": "pc",
+            "tags": [
+                "HTML",
+                "CSS3",
+                "Javascript",
+                "Git",
+                "Tweenmax"
+            ]
+        },
+        {
+            "year": "2023",
+            "title": "유니브",
+            "desc": "제약, 헬스케어 전문 마케팅 에이전시 프리랜서 작업<br />외주 메일링 퍼블리싱<br /> HTML5와 CSS 애니메이션 구현",
+            "image": [
+                "works_univ.webp",
+                "works_univ.gif"
+            ],
+            "type": "tab",
+            "tags": [
+                "HTML",
+                "CSS3",
+                "Javascript"
+            ]
+        },
+        {
+            "year": "2020",
+            "title": "2022 인디게임페스티벌 ",
+            "desc": "2022 인디게임페스티벌 웹사이트 제작<br />웹 및 모바일 사이트 디자인 및 퍼블리싱<br />반응형 디자인",
+            "image": [
+                "works_indie.webp",
+                "works_indie.gif"
+            ],
+            "type": "pc",
+            "tags": [
+                "Photoshop",
+                "HTML",
+                "CSS3",
+                "jQuery",
+                "Resposible"
+            ]
+        },
+        {
+            "year": "2018",
+            "title": "엔투게임",
+            "desc": "PC 웹게임 사이트 리뉴얼<br /> 디자인 및 퍼블리싱 기여 100%",
+            "image": [
+                "works_ntogame.webp",
+                "works_ntogame.gif"
+            ],
+            "type": "pc",
+            "tags": [
+                "Photoshop",
+                "HTML",
+                "CSS3",
+                "jQuery"
+            ]
+        },
+        {
+            "year": "2016",
+            "title": "CJ제일제당",
+            "desc": "웹 및 모바일 사이트 퍼블리싱 운영<br />컨텐츠 유지보수, 사용자 참여 이벤트 퍼블리싱",
+            "image": "works_cheiljedang.webp",
+            "type": "pc",
+            "tags": [
+                "HTML",
+                "CSS3",
+                "Javascript"
+            ]
+        },
+        {
+            "year": "2014",
+            "title": "Girl's Education",
+            "desc": "CJ와 & 유네스코 주최 캠페인 페이지 디자인<br />스타애장품 경매, 구매 페이지 및 이벤트성 기부 페이지 디자인 작업<br />디자인 시안 기여 100%",
+            "image": [
+                "works_girls.webp",
+                "works_girls.gif"
+            ],
+            "type": "pc",
+            "tags": [
+                "Photoshop",
+                "Illustrator"
+            ]
+        },
+        {
+            "year": "2014",
+            "title": "CJ그룹",
+            "desc": "사내 인트라넷 및 웹사이트 운영<br />디자인 및 퍼블리싱 지원",
+            "image": "works_cj.webp",
+            "type": "pc",
+            "tags": [
+                "Photoshop",
+                "Illustrator",
+                "HTML",
+                "CSS2"
+            ]
+        },
+        {
+            "year": "2013",
+            "title": "CJ CGV",
+            "desc": "CGV영화관 웹사이트 시안<br />웹사이트 개편 시안 작업으로 사업 수주",
+            "image": "works_cgv.webp",
+            "type": "pc",
+            "tags": [
+                "Photoshop",
+                "Illustrator"
+            ]
+        },
+        {
+            "year": "2013",
+            "title": "CJ 도너스캠프",
+            "desc": "웹 및 모바일 사이트 개편<br />웹접근성 준수 사이트<br />모바일 디자인 기여 100%, 퍼블리싱 지원",
+            "image": "works_donors.webp",
+            "type": "mobile",
+            "tags": [
+                "Photoshop",
+                "HTML",
+                "CSS3"
+            ]
+        },
+        {
+            "year": "2012",
+            "title": "(주)온라인파워스",
+            "desc": "웹 및 모바일 사이트 개편<br />반응형 디자인, parallex effect",
+            "image": "works_online.webp",
+            "type": "pc",
+            "tags": [
+                "HTML",
+                "CSS3",
+                "Javascript"
+            ]
+        },
+        {
+            "year": "2012",
+            "title": "인피니티 헬스케어",
+            "desc": "스마트넷 클라우드 웹사이트 제작<br />디자인 및 퍼블리싱 기여 100%",
+            "image": [
+                "works_infinit.webp",
+                "works_infinit.gif"
+            ],
+            "type": "pc",
+            "tags": [
+                "Photoshop",
+                "HTML",
+                "CSS3"
+            ]
+        }
+    ]
+}
