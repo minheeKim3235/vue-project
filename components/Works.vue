@@ -58,8 +58,34 @@ const randomBg = () => {
     return randomColor.value[order];
 }
 
+const workImages = ref([]);
+const imagesLoaded = ref(0);
+const totalImages = ref(0);
+const preloadedImages = {};
+// gsap
+gsap.registerPlugin(ScrollTrigger);
+const preloadImages = () => {
+    imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+        preloadedImages[url] = img;
+    })
+}
+
+const loadImageData = () => {
+    workImages.value = data.works.map((data) => ({
+        image: data.image
+    }))
+    totalImages.value = workImages.value.length;
+}
+const onImageLoad = () => {
+    imagesLoaded.value += 1;
+    if (imagesLoaded.value === totalImages.value) {
+
+    }
+}
 onMounted(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    loadImageData();
 })
 </script>
 
