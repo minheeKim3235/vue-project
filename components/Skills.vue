@@ -3,7 +3,7 @@
         <h2>SKILLS</h2>
         <ul>
             <li v-for="item in data.skills" :key="item.name">
-                <span><img :src="getImageUrl(item.icon)" :alt="item.name" class="icon"></span>
+                <span><img :src="`_nuxt/assets/images/icon_${item.icon}.svg`" :alt="item.name" class="icon"></span>
             </li>
         </ul>
         <!-- ajax 설명 불러오기 -->
@@ -19,9 +19,6 @@
 <script setup>
 import data from '@/assets/js/data.json'
 
-const getImageUrl = (name) => {
-    return new URL(`../assets/images/icon_${name}.svg`, import.meta.url).href
-}
 </script>
 
 <style lang="scss" scoped>

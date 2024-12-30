@@ -37,14 +37,14 @@ button {
 .home_wrap {
   width: 100%;
   height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow: auto;
+  // scroll-snap-type: y mandatory;
+  // overflow: auto;
 }
 section {
   overflow: hidden;
   position: relative;
   width: 100%;
-  scroll-snap-align: start;
+  // scroll-snap-align: start;
   h2 {
     margin-top: 100px;
     text-align: center;

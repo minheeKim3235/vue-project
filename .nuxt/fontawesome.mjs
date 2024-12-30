@@ -4,7 +4,8 @@ import {
   faEnvelope as freeFasFaEnvelope,
   faPaperPlane as freeFasFaPaperPlane,
   faCakeCandles as freeFasFaCakeCandles,
-  faMobileScreenButton as freeFasFaMobileScreenButton
+  faMobileScreenButton as freeFasFaMobileScreenButton,
+  faXmark as freeFasFaXmark
 } from '@fortawesome/free-solid-svg-icons'
 
-export default {freeFasFaPen, freeFasFaUser, freeFasFaEnvelope, freeFasFaPaperPlane, freeFasFaCakeCandles, freeFasFaMobileScreenButton}
+export default {freeFasFaPen, freeFasFaUser, freeFasFaEnvelope, freeFasFaPaperPlane, freeFasFaCakeCandles, freeFasFaMobileScreenButton, freeFasFaXmark}
