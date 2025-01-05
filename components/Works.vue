@@ -199,7 +199,6 @@ onMounted(() => {
                 aspect-ratio: 1.75;
                 background: var(--color-dark);
                 border-radius: 8px;
-                cursor: pointer;
                 transition: .5s all;
                 img {
                     object-fit: cover;
@@ -225,6 +224,7 @@ onMounted(() => {
                 }
                 figure {
                     transform: translateY(-10px);
+                    cursor: pointer;
                     img {
                         mix-blend-mode: normal !important;
                         opacity: 1;

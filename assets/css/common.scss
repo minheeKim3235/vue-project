@@ -1,4 +1,5 @@
 @use './header' as *;
+@use './media' as *;
 @import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@200;500&family=Nanum+Gothic:wght@400;800&family=Sofia+Sans+Condensed:wght@600&family=Oswald:wght@400;500&display=swap');
 
 :root {
@@ -48,7 +49,7 @@ section {
   h2 {
     margin-top: 100px;
     text-align: center;
-    font: 200 7vw/1 var(--font-tit);
+    font: 200 7vmax/1 var(--font-tit);
     letter-spacing: -5px;
   }
 }

@@ -18,11 +18,11 @@
             <figure :class="`${item.type}`">
                 <span class="frame"></span>
                 <span class="img_wrap">
-                    <img :src="`_nuxt/assets/images/works/${item.image[0]}`" alt="" v-if="Array.isArray(item.image)">
+                    <img :src="`_nuxt/assets/images/works/${item.image[0]}`" alt="" v-if="Array.isArray(item.image) && gifData === null">
                     <img :src="`_nuxt/assets/images/works/${item.image}`" alt="" v-else>
                 </span>
             </figure>
-            <div class="btn_close" :style="btnStyle" v-show="isBtnVisible" @click="closeDetail"><font-awesome :icon="['fas', 'xmark']" />x</div>
+            <div class="btn_close" :style="btnStyle" v-show="isBtnVisible" @click="closeDetail"><font-awesome :icon="['fas', 'xmark']" /></div>
         </div>
     </Teleport>
 </template>
@@ -31,6 +31,7 @@
 import { ref, reactive, watch } from 'vue'
 import data from '@/assets/js/data.json'
 
+const gifData = ref(null)
 const props = defineProps({
     initialItemIndex: {
         type: Number,
@@ -70,9 +71,9 @@ const handleMouseMove = (e) => {
     if (!target.closest('.pagination, .prev, .next, .works_year')) {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
-        btnStyle.left = `${mouseX} px`;
+        btnStyle.left = `${mouseX}px`;
         btnStyle.top = `${mouseY}px`;
-        isBtnVisibile.value = true;
+        isBtnVisible.value = true;
     } else {
         isBtnVisible.value = false;
     }
@@ -349,7 +350,9 @@ onMounted(() => {
     top: 0;
     width: 45px;
     height: 45px;
-    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
     border-radius: 50%;
     background: #fff;
@@ -358,9 +361,5 @@ onMounted(() => {
     transform: translate(-50%, -50%);
     z-index: 100;
     cursor: none;
-
-    i {
-        margin-top: 7px;
-    }
 }
 </style>

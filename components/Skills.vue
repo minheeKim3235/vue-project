@@ -1,24 +1,55 @@
 <template>
     <section id="skills" class="bg-dark">
         <h2>SKILLS</h2>
-        <ul>
-            <li v-for="item in data.skills" :key="item.name">
+        <ul @mouseleave="changeSkill('default')">
+            <li v-for="item in data.skills" :key="item.name" @mouseover="changeSkill(item)" :class="`icon_${item.icon}`">
                 <span><img :src="`_nuxt/assets/images/icon_${item.icon}.svg`" :alt="item.name" class="icon"></span>
             </li>
         </ul>
         <!-- ajax 설명 불러오기 -->
-        <div class="text_area">
+        <div class="text_area motion" ref="textArea">
             <div class="text">
-                <h3></h3>
-                <p></p>
+                <h3>{{ skill.title }}</h3>
+                <p v-html="skill.desc"></p>
             </div>
         </div>
     </section>
 </template>
 
 <script setup>
+import { ref, watch } from 'vue'
 import data from '@/assets/js/data.json'
 
+const textArea = ref(null);
+const skill = ref({
+    title: '제가 무엇을 할 수 있는지 궁금하신가요?',
+    desc: '웹 화면 구현을 위해 보유하고 있는 기술들을 둘러보세요.<br />새로운 기술들이 계속 업데이트 되고 있습니다.'
+})
+
+const changeSkill = (val) => {
+    textArea.value.classList.add('hide');
+    setTimeout(() => {
+        textArea.value.classList.remove('motion');
+        
+        if (val === 'default') {
+            skill.value.title = '제가 무엇을 할 수 있는지 궁금하신가요?'
+            skill.value.desc = '웹 화면 구현을 위해 보유하고 있는 기술들을 둘러보세요.<br />새로운 기술들이 계속 업데이트 되고 있습니다.'
+        } else {
+            skill.value.title = val.name
+            skill.value.desc = val.description
+        }
+    }, 300)
+    setTimeout(() => {
+        textArea.value.classList.remove('hide');
+        textArea.value.classList.add('motion');
+    }, 600)
+}
+
+// watch(skill, (newVal) => {
+//     setTimeout(() => {
+//         textArea.value.classList.add('motion');
+//     }, 300)
+// }, { deep: true });
 </script>
 
 <style lang="scss" scoped>
@@ -70,16 +101,17 @@ import data from '@/assets/js/data.json'
                 img {
                     position: relative;
                     z-index: 4; 
+                    max-width:100%;
                 }
             }
-            &:nth-of-type(3) span::before,
-            &:nth-of-type(4) span::before {
+            &.icon_html span::before,
+            &.icon_css span::before {
                 width: 78%;
             }
-            &:nth-of-type(6) span::before {
+            &.icon_react span::before {
                 width: 70%;
             }
-            &:nth-of-type(7) span::before {
+            &.icon_vue span::before {
                 width: 48%;
             }
         }
@@ -122,15 +154,34 @@ import data from '@/assets/js/data.json'
         }
         p {
             word-break: keep-all;
-            span {
-                display: inline-block;
-                margin: 2px;
-                padding: 5px 8px;
-                color: #fff;
-                background-color: rgba(63, 114, 175, .5);
-                border-radius: 15px;
+            line-height:140%;
+        }
+        .text {
+            transform: translateY(50px);
+            transition: opacity 0.3s, transform 0.6s;
+            opacity: 0;
+        }
+        &.hide {
+            .text {
+                opacity: 0 !important;
             }
         }
+        &.motion {
+            .text {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+    }
+}
+:deep(.text_area) {
+    span {
+        display: inline-block;
+        margin: 2px;
+        padding: 5px 8px;
+        color: #fff;
+        background-color: rgba(63, 114, 175, .5);
+        border-radius: 15px;
     }
 }
 </style>

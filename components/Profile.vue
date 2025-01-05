@@ -5,15 +5,15 @@
             <span><img src="@/assets/images/profile.svg" alt="프로필 일러스트"></span>
         </figure>
         <p class="introduce">
-            <!-- <strong>DESIGN IS HOW IT WORKS.</strong><br />
-            익숙하고 편안한 UX에서 오는 안정적이고 감각적인 UI를 제공하는 것.<br />웹디자인과 퍼블리싱을 좋아하고 앞으로도 계속 하고 싶은 이유입니다. -->
+            안녕하세요, <strong>{{ totalCarrior }}차</strong> 퍼블리셔 김민희입니다.<br />
+            만족스러운 사용자경험을 위한 기초가 탄탄하고 완성도 높은 화면 구현을 위해 노력하고 있습니다.
         </p>
         <div class="wrapper">
             <article>
-                <h3>Profile</h3>
+                <h3>INFO</h3>
                 <ul>
                     <li><font-awesome :icon="['fas', 'cake-candles']" /> 1986년</li>
-                    <li><font-awesome :icon="['fas', 'mobile-screen-button']" /> 010-6217-****</li>
+                    <li><font-awesome :icon="['fas', 'mobile-screen-button']" /> 010-621*-****</li>
                     <li><font-awesome :icon="['fas', 'envelope']" /> mhkim3235@gmail.com</li>
                 </ul>
             </article>
@@ -43,11 +43,21 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
 
+const totalCarrior = computed(() => {
+    const fulltime = new Date() - new Date('2010-02-16');
+    const restTime = new Date('2023-11-08') - new Date('2016-09-01');
+    const calcMonth = 24 * 60 * 60 * 1000 * 30;
+    const resultY = parseInt((fulltime - restTime) / calcMonth / 12);
+    const resultM = parseInt(((fulltime - restTime) / calcMonth) % 12);
+    return `${resultY}년 ${resultM}개월`
+})
 </script>
 
 <style lang="scss" scoped>
 #profile {
+    padding-top:10vh;
     display: grid;
     grid-template-columns: 38.9vw 1fr;
     grid-template-rows: 1fr 2fr;

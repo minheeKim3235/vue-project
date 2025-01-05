@@ -35,7 +35,7 @@
             &:before, &:after {
                 position: relative;
                 text-align: center;
-                font: 200 7vw/.73 var(--font-tit);
+                font: 200 7vmax/.73 var(--font-tit);
                 color: var(--color-dark);
                 letter-spacing: -5px;
             }
