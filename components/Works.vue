@@ -70,13 +70,17 @@ onMounted(() => {
     // 가로 스크롤 최대 너비 계산
     const getMaxWidth = () => {
         const viewportWidth = window.outerWidth;
+        if (window.innerWidth > 480) {
+            sections.forEach((section) => {
+                maxWidth += section.offsetWidth;
+            });
+            let spacing = viewportWidth * 0.025 * (sections.length - 1) + viewportWidth * 0.078 * 2;
+            maxWidth += spacing;
+            listWrap.value.style.width = `${maxWidth}px`;
+        } else {
+            return
+        }
         
-        sections.forEach((section) => {
-            maxWidth += section.offsetWidth;
-        });
-        let spacing = viewportWidth * 0.025 * (sections.length - 1) + viewportWidth * 0.078 * 2;
-        maxWidth += spacing;
-        listWrap.value.style.width = `${maxWidth}px`;
     };
 
     const initializeScroll = () => {
@@ -86,20 +90,24 @@ onMounted(() => {
         if (scrollTween) {
             scrollTween.kill();
         }
-
-        scrollTween = gsap.to('.work_lists', {
-            x: () => `-${maxWidth - window.innerWidth}`,
-            ease: 'none'
-        })
-
-        horizontalScroll = ScrollTrigger.create({
-            animation: scrollTween,
-            trigger: '#works',
-            pin: true,
-            start: 'top top',
-            end: () => `+=${maxWidth - window.innerWidth}`,
-            scrub: true
-        })   
+        
+        if (window.innerWidth > 480) {
+            scrollTween = gsap.to('.work_lists', {
+                x: () => `-${maxWidth - window.innerWidth}`,
+                ease: 'none'
+            })
+    
+            horizontalScroll = ScrollTrigger.create({
+                animation: scrollTween,
+                trigger: '#works',
+                pin: true,
+                start: 'top top',
+                end: () => `+=${maxWidth - window.innerWidth}`,
+                scrub: true
+            })   
+        } else {
+            return
+        }
     }
 
     getMaxWidth();
