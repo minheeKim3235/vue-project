@@ -8,7 +8,7 @@
                 </p>
             </div>
             <div class="send-mail">
-                <a href="contact"><i class="fas fa-envelope"></i>
+                <a href="mailto:mhkim3235@gmail.com"><i class="fas fa-envelope"></i>
                     mhkim3235@gmail.com</a>
             </div>
         </div>

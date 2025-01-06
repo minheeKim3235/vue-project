@@ -70,6 +70,8 @@ onMounted(() => {
     // 가로 스크롤 최대 너비 계산
     const getMaxWidth = () => {
         const viewportWidth = window.outerWidth;
+        maxWidth = 0;
+        
         if (window.innerWidth > 480) {
             sections.forEach((section) => {
                 maxWidth += section.offsetWidth;
@@ -80,7 +82,6 @@ onMounted(() => {
         } else {
             return
         }
-        
     };
 
     const initializeScroll = () => {
@@ -116,8 +117,8 @@ onMounted(() => {
     // 리사이즈 이벤트 핸들러
     window.addEventListener("resize", () => {
         getMaxWidth();
-        initializeScroll(); // 스크롤 및 드래그 초기화
         ScrollTrigger.refresh();
+        initializeScroll(); // 스크롤 및 드래그 초기화
     });
 
 })

@@ -42,6 +42,12 @@ const currentClass = computed(() => {
 onMounted(() => {
   updateBreakpoint();
   window.addEventListener('resize', updateBreakpoint);
+
+  const script = document.createElement('script');
+  script.setAttribute('data-cfasync', 'false');
+  script.setAttribute('type', 'text/javascript');
+  script.src = 'form-submission-handler.js';
+  document.body.appendChild(script); // body 태그 하단에 추가
 })
 onUnmounted(() => {
   window.removeEventListener('resize', updateBreakpoint);

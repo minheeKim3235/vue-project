@@ -1,7 +1,7 @@
 <template>
     <section id="contact" class="bg-dark">
         <h2>Get in Touch!</h2>
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbwiPtnHWPhKMG80IGuG5SSBSWPvP67QRadyEZmBepMDh0dAmLTu04yClyFHy-WIygFM/exec" target="frAttachFiles" name="contactForm" class="gform">
+        <form method="POST" action="https://script.google.com/macros/s/AKfycbzPzHhvwR20-cz7nz6fZdyn1EGcy6_zoJB9kO0XJG_SmOmq77w_BVC4LkRR9eKG96a8/exec" target="frAttachFiles" name="contactForm" class="gform">
             <ul>
                 <li>
                     <label for="name"><font-awesome :icon="['fas', 'user']" />이름</label>
@@ -21,22 +21,129 @@
                 </li>
             </ul>
             <button type="submit"><font-awesome :icon="['fas', 'paper-plane']" /> SEND MESSAGE</button>
-            <div style="display:none" class="thankyou_message">
-                <div class="inner_wrap">
-                    <h2><em><i class="fa-solid fa-envelope-circle-check"></i><br />
-                            Thanks!</em>연락주셔서 감사합니다!
-                    </h2>
-                    <span class="done"><i class="fa-solid fa-xmark"></i></span>
-                </div>
-                <!-- You can customize the thankyou message by editing the code below -->
-
-            </div>
         </form>
+        <div class="thankyou_message" v-if="submitEnd === true">
+            <div class="inner_wrap">
+                <h2><em><i class="fa-solid fa-envelope-circle-check"></i><br />
+                        Thanks!</em>연락주셔서 감사합니다!
+                </h2>
+                <span class="done" @click="submitEnd = false"><font-awesome :icon="['fas', 'xmark']" /></span>
+            </div>
+            <!-- You can customize the thankyou message by editing the code below -->
+
+        </div>
     </section>
 </template>
-
 <script setup>
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { ref } from 'vue'
+const submitEnd = ref(false);
+
+onMounted(() => {
+    // get all data in form and return object
+function getFormData(form) {
+    var elements = form.elements;
+    var honeypot;
+
+    var fields = Object.keys(elements).filter(function(k) {
+        if (elements[k].name === "honeypot") {
+        honeypot = elements[k].value;
+        return false;
+        }
+        return true;
+    }).map(function(k) {
+        if(elements[k].name !== undefined) {
+        return elements[k].name;
+        // special case for Edge's html collection
+        }else if(elements[k].length > 0){
+        return elements[k].item(0).name;
+        }
+    }).filter(function(item, pos, self) {
+        return self.indexOf(item) == pos && item;
+    });
+
+    var formData = {};
+    fields.forEach(function(name){
+        var element = elements[name];
+        
+        // singular form elements just have one value
+        formData[name] = element.value;
+
+        // when our element has multiple items, get their values
+        if (element.length) {
+        var data = [];
+        for (var i = 0; i < element.length; i++) {
+            var item = element.item(i);
+            if (item.checked || item.selected) {
+            data.push(item.value);
+            }
+        }
+        formData[name] = data.join(', ');
+        }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+    formData.formGoogleSendEmail
+        = form.dataset.email || ""; // no email by default
+
+    return {data: formData, honeypot: honeypot};
+    }
+
+    function handleFormSubmit(event) { // handles form submit without any jquery
+        event.preventDefault();           // we are submitting via xhr below
+        var form = event.target;
+        var formData = getFormData(form);
+        var data = formData.data;
+
+        // If a honeypot field is filled, assume it was done so by a spam bot.
+        if (formData.honeypot) {
+            return false;
+        }
+
+        disableAllButtons(form);
+        var url = form.action;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        // xhr.withCredentials = true;
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                form.reset();
+                var formElements = form.querySelector(".form-elements")
+                if (formElements) {
+                formElements.style.display = "none"; // hide form
+                }
+                var thankYouMessage = form.querySelector(".thankyou_message");
+                if (thankYouMessage) {
+                thankYouMessage.style.display = "block";
+                }
+            }
+        };
+        // url encode form data for sending as post data
+        var encoded = Object.keys(data).map(function(k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        xhr.send(encoded);
+        }
+
+        function loaded() {
+        // bind to the submit event of our form
+        var forms = document.querySelectorAll("form.gform");
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].addEventListener("submit", handleFormSubmit, false);
+        }
+        };
+        document.addEventListener("DOMContentLoaded", loaded, false);
+
+        function disableAllButtons(form) {
+        var buttons = form.querySelectorAll("button");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+    }
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -57,33 +164,45 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
         margin: 0 auto;
         min-width: 400px;
         width: 35vw;
-    }
-    label {
-        position:relative;
-        display: flex;
-        align-items: center;
-        margin-left: 30px;
-        height: 50px;
-        line-height: 100%;
-        color: transparent;
-        z-index: 2;
-        svg {
-            line-height: auto;
-            color: #fff;
+        li {
+            position: relative;
+            display: flex;
+            margin: 10px 0;
+            label {
+                position:absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 0 0 20px;
+                margin: 0;
+                left: 0;
+                top: 50%;
+                width: 50px;
+                aspect-ratio: 1;
+                line-height: 100%;
+                color: transparent;
+                z-index: 2;
+                transform: translateY(-50%);
+                svg {
+                    line-height: auto;
+                    color: #fff;
+                }
+                &.hidden {
+                    width: 0;
+                    height: 0;
+                    line-height: 0;
+                    color: transparent;
+                }
+            }
         }
-        &.hidden {
-            width: 0;
-            height: 0;
-            line-height: 0;
-            color: transparent;
-        }
     }
+    
     input,
     textarea {
+        flex: 1 0 auto;
         position: relative;
         display: block;
-        margin: -50px 0 15px;
-        padding: 0 20px 0 80px;
+        padding: 0 20px 0 60px;
         width: 100%;
         height: 50px;
         font-size: 0.825rem;
@@ -164,7 +283,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
         width: 100%;
         text-align: center;
         font-family: var(--font-desc);
-        font-size: 1rem;
+        font-size: 1rem !important;
         line-height: 1.125rem;
         letter-spacing: 0;
         color: #333 !important;

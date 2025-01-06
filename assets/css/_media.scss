@@ -165,6 +165,12 @@
     #contact form {
         width: 90vw !important;
         min-width: 200px !important;
+        label {
+            height: 36px !important;
+            + input {
+                height: 36px !important;
+            }
+        }
     }
 }
 .class-tablet {
@@ -295,9 +301,6 @@
         }
     }
     #contact {
-        input {
-            margin-top: -40px !important;
-        }
         input,
         label,
         button {
@@ -319,10 +322,6 @@
     #intro {
         .greeting {
             font-size: 2.125vw !important;
-        }
-
-        .intro_wrap p {
-            font-size: 10vw !important;
         }
 
         a.send-mail {
@@ -371,17 +370,6 @@
     #works .works_detail .pagination h3 {
         display: inline-block !important;
         font-size: 1.825rem !important;
-    }
-    #contact {
-        input {
-            margin: -45px 0 10px !important;
-        }
-        input,
-        label,
-        button {
-            height: 45px !important;
-            line-height: 45px !important;
-        }
     }
 }
   
