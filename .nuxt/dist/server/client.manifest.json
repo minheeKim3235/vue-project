@@ -1,10 +1,10 @@
 {
-  "_Bcgfy1Nu.js": {
+  "_BX0PM232.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Bcgfy1Nu.js",
+    "file": "BX0PM232.js",
     "name": "vue.8fc199ce",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
@@ -50,15 +50,17 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Bc-U30Ig.js",
+    "file": "Ci2Rgwgb.js",
     "name": "error-404",
     "src": "node_modules/nuxt/dist/app/components/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_Bcgfy1Nu.js"
+      "_BX0PM232.js"
     ],
-    "css": []
+    "css": [
+      "error-404.CoZKRZXM.css"
+    ]
   },
   "error-404.CoZKRZXM.css": {
     "file": "error-404.CoZKRZXM.css",
@@ -71,15 +73,17 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "RJ8lon1E.js",
+    "file": "SNLbr2mv.js",
     "name": "error-500",
     "src": "node_modules/nuxt/dist/app/components/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_Bcgfy1Nu.js"
+      "_BX0PM232.js"
     ],
-    "css": []
+    "css": [
+      "error-500.D6506J9O.css"
+    ]
   },
   "error-500.D6506J9O.css": {
     "file": "error-500.D6506J9O.css",
@@ -92,7 +96,7 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DQk5R2ZA.js",
+    "file": "C8BSp4Qf.js",
     "name": "entry",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -100,14 +104,22 @@
       "node_modules/nuxt/dist/app/components/error-404.vue",
       "node_modules/nuxt/dist/app/components/error-500.vue"
     ],
-    "_globalCSS": true
+    "css": [
+      "entry.BUAMWm2z.css"
+    ]
+  },
+  "entry.BUAMWm2z.css": {
+    "file": "entry.BUAMWm2z.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
   },
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "BWneAnL9.js",
+    "file": "B7cRtHgy.js",
     "name": "index",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
