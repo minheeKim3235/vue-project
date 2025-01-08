@@ -23,5 +23,9 @@ export default defineNuxtConfig({
     icons: {
       solid: ['pen', 'user', 'envelope', 'paper-plane', 'cake-candles', 'mobile-screen-button', 'xmark']
     }
+  },
+  target: 'static', // 정적 웹사이트임을 명시
+  router: {
+    base: '/portfolio/' // github repository 이름 넣기
   }
 })
