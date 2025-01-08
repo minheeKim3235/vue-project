@@ -22,7 +22,7 @@
                 </div>
             </li>
         </ul>
-        <WorksDetail :initialItemIndex="detailIndex" ref="test" />
+        <WorksDetail :initialItemIndex="detailIndex" ref="test" @closed="closingDetail" />
     </section>
 </template>
 
@@ -40,7 +40,7 @@ const randomColor = ref(['1d3045', '6682a3', 'dbe2ef', 'fff'])
 const makeRandomColor = ref([])
 const listWrap = ref(null);
 const test = ref(null);
-const detailIndex = ref(0);
+const detailIndex = ref(undefined);
 
 const randomBg = () => {
     let colorCount = randomColor.value.length;
@@ -51,9 +51,11 @@ const randomBg = () => {
 const detailView = (val) => {
     detailIndex.value = val;
 }
-
+const closingDetail = () => {
+    detailIndex.value = undefined;
+}
 watch(detailIndex, (newVal) => {
-    if (test.value) {
+    if (test.value && detailIndex.value !== undefined) {
         test.value.isShow = true;
     }
 })

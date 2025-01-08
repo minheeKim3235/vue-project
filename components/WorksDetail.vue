@@ -6,7 +6,7 @@
             @click="handleClick"
         >
             <div class="pagination">
-                <h3 class="works_year" v-i="item.year">{{ item.year }}</h3>
+                <h3 class="works_year" v-if="item.year">{{ item.year }}</h3>
                 <button type="button" class="prev" @click="changeIndex(-1)">PREV</button>
                 <button type="button" class="next" @click="changeIndex(1)">NEXT</button>
             </div>
@@ -47,6 +47,7 @@ const nextBtn = ref(null);
 const currentIndex = ref(props.initialItemIndex);
 const btnStyle = reactive({ left: '0px', top: '0px'});
 const isBtnVisible = ref(false);
+const emits = defineEmits(['closed']);
 
 //------- computed ---------//
 const item = computed(() => {
@@ -95,9 +96,10 @@ const handleTouchMove = (e) => {
 const handleClick = (e) => {
     const target = e.target;
     if (!target.closest('.pagination, .prev, .next, .works_year')) {
+        emits('closed');
         isShow.value = false;
-        prevBtn.value.classList.remove('deactive');
-        nextBtn.value.classList.remove('deactive');
+        prevBtn.value?.classList.remove('deactive');
+        nextBtn.value?.classList.remove('deactive');
         document.documentElement.style.overflow = 'auto';
     }
 }
@@ -277,12 +279,14 @@ onMounted(() => {
 
         .img_wrap {
             position: absolute;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
             z-index: 2;
 
             img {
-                width: 100%;
+                max-width: 100%;
             }
         }
 

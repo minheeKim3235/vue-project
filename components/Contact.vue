@@ -1,7 +1,9 @@
 <template>
     <section id="contact" class="bg-dark">
         <h2>Get in Touch!</h2>
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbzPzHhvwR20-cz7nz6fZdyn1EGcy6_zoJB9kO0XJG_SmOmq77w_BVC4LkRR9eKG96a8/exec" target="frAttachFiles" name="contactForm" class="gform">
+        <font-awesome :icon="['fas', 'envelope']" />
+        <span>mhkim3235@gmail.com</span>
+        <!-- <form method="POST" action="https://script.google.com/macros/s/AKfycbzPzHhvwR20-cz7nz6fZdyn1EGcy6_zoJB9kO0XJG_SmOmq77w_BVC4LkRR9eKG96a8/exec" target="frAttachFiles" name="contactForm" class="gform">
             <ul>
                 <li>
                     <label for="name"><font-awesome :icon="['fas', 'user']" />이름</label>
@@ -21,17 +23,15 @@
                 </li>
             </ul>
             <button type="submit"><font-awesome :icon="['fas', 'paper-plane']" /> SEND MESSAGE</button>
-        </form>
-        <div class="thankyou_message" v-if="submitEnd === true">
+        </form> -->
+        <!-- <div class="thankyou_message" v-if="submitEnd === true">
             <div class="inner_wrap">
                 <h2><em><i class="fa-solid fa-envelope-circle-check"></i><br />
                         Thanks!</em>연락주셔서 감사합니다!
                 </h2>
                 <span class="done" @click="submitEnd = false"><font-awesome :icon="['fas', 'xmark']" /></span>
             </div>
-            <!-- You can customize the thankyou message by editing the code below -->
-
-        </div>
+        </div> -->
     </section>
 </template>
 <script setup>
@@ -148,164 +148,182 @@ function getFormData(form) {
 
 <style lang="scss" scoped>
 #contact {
-    padding: 10vh 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background: #596c84;
+    color: #fff;
     h2 {
         margin-bottom: 30px;
         font-size: 6vw;
-        color: #fff;
         letter-spacing: 0;
     }
-    form {
-        position: relative;
-        display: flex;
-        flex-flow: column wrap;
-        margin: 0 auto;
-        min-width: 400px;
-        width: 35vw;
-        li {
-            position: relative;
-            display: flex;
-            margin: 10px 0;
-            label {
-                position:absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 0 0 20px;
-                margin: 0;
-                left: 0;
-                top: 50%;
-                width: 50px;
-                aspect-ratio: 1;
-                line-height: 100%;
-                color: transparent;
-                z-index: 2;
-                transform: translateY(-50%);
-                svg {
-                    line-height: auto;
-                    color: #fff;
-                }
-                &.hidden {
-                    width: 0;
-                    height: 0;
-                    line-height: 0;
-                    color: transparent;
-                }
-            }
-        }
+    svg {
+        margin-bottom: 10px;
+        font-size: 36px;
     }
+}
+// #contact {
+//     padding: 10vh 0;
+//     min-height: 100vh;
+//     background: #596c84;
+//     h2 {
+//         margin-bottom: 30px;
+//         font-size: 6vw;
+//         color: #fff;
+//         letter-spacing: 0;
+//     }
+//     form {
+//         position: relative;
+//         display: flex;
+//         flex-flow: column wrap;
+//         margin: 0 auto;
+//         min-width: 400px;
+//         width: 35vw;
+//         li {
+//             position: relative;
+//             display: flex;
+//             margin: 10px 0;
+//             label {
+//                 position:absolute;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 padding: 0 0 0 20px;
+//                 margin: 0;
+//                 left: 0;
+//                 top: 50%;
+//                 width: 50px;
+//                 aspect-ratio: 1;
+//                 line-height: 100%;
+//                 color: transparent;
+//                 z-index: 2;
+//                 transform: translateY(-50%);
+//                 svg {
+//                     line-height: auto;
+//                     color: #fff;
+//                 }
+//                 &.hidden {
+//                     width: 0;
+//                     height: 0;
+//                     line-height: 0;
+//                     color: transparent;
+//                 }
+//             }
+//         }
+//     }
     
-    input,
-    textarea {
-        flex: 1 0 auto;
-        position: relative;
-        display: block;
-        padding: 0 20px 0 60px;
-        width: 100%;
-        height: 50px;
-        font-size: 0.825rem;
-        color: #fff;
-        background: #697a90;
-        border: 1px solid rgba(255, 255, 255, .25);
-        border-radius: 50vh;
-        z-index: 1;
-        transition: .5s all;
-    }
-    textarea {
-        padding: 20px;
-        margin-top: 0;
-        height: 200px;
-        line-height: 1.25rem;
-        border-radius: 20px;
-        resize: none;
-    }
-    input::placeholder,
-    textarea::placeholder {
-        color: #fff;
-    }
-    input:focus,
-    textarea:focus {
-        color: var(--color-dark);
-        background: rgba(255, 255, 255, .5);
-        border: none;
-        outline: none;
-        box-shadow: 0 0 15px rgba(0, 0, 0, .2);
-    }
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        height: 50px;
-        color: var(--color-dark);
-        border-radius: 25px;
-        background: rgba(255, 255, 255, .8);
-        transition: .5s all;
-        &:focus,
-        &:active {
-            background: rgba(29, 48, 69, .8);
-            color: #fff;
-            outline: none;
-            box-shadow: 0 0 15px rgba(0, 0, 0, .2);
-        }
-    }
-}
-.thankyou_message {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .5);
-    z-index: 101;
-    .inner_wrap {
-        position: absolute;
-        display: flex;
-        flex-flow: row wrap;
-        justify-items: center;
-        align-items: center;
-        left: 50%;
-        top: 50%;
-        padding: 50px 20px !important;
-        width: 400px !important;
-        height: auto !important;
-        background: #fff;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-        z-index: 101;
-        transform: translate(-50%, -50%);
-    }
-    h2 {
-        padding: 0;
-        margin: 0 !important;
-        width: 100%;
-        text-align: center;
-        font-family: var(--font-desc);
-        font-size: 1rem !important;
-        line-height: 1.125rem;
-        letter-spacing: 0;
-        color: #333 !important;
-        em {
-            display: block;
-            margin-bottom: 40px;
-            font: normal 400 2rem/1 var(--font-tit);
-            i {
-                margin-bottom: 20px;
-            }
-        }
-    }
-    .done {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        width: 40px;
-        height: 40px;
-        color: #333;
-        text-align: center;
-        line-height: 40px;
-        cursor: pointer;
-    }
-}
+//     input,
+//     textarea {
+//         flex: 1 0 auto;
+//         position: relative;
+//         display: block;
+//         padding: 0 20px 0 60px;
+//         width: 100%;
+//         height: 50px;
+//         font-size: 0.825rem;
+//         color: #fff;
+//         background: #697a90;
+//         border: 1px solid rgba(255, 255, 255, .25);
+//         border-radius: 50vh;
+//         z-index: 1;
+//         transition: .5s all;
+//     }
+//     textarea {
+//         padding: 20px;
+//         margin-top: 0;
+//         height: 200px;
+//         line-height: 1.25rem;
+//         border-radius: 20px;
+//         resize: none;
+//     }
+//     input::placeholder,
+//     textarea::placeholder {
+//         color: #fff;
+//     }
+//     input:focus,
+//     textarea:focus {
+//         color: var(--color-dark);
+//         background: rgba(255, 255, 255, .5);
+//         border: none;
+//         outline: none;
+//         box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+//     }
+//     button {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 10px;
+//         height: 50px;
+//         color: var(--color-dark);
+//         border-radius: 25px;
+//         background: rgba(255, 255, 255, .8);
+//         transition: .5s all;
+//         &:focus,
+//         &:active {
+//             background: rgba(29, 48, 69, .8);
+//             color: #fff;
+//             outline: none;
+//             box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+//         }
+//     }
+// }
+// .thankyou_message {
+//     position: fixed;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, .5);
+//     z-index: 101;
+//     .inner_wrap {
+//         position: absolute;
+//         display: flex;
+//         flex-flow: row wrap;
+//         justify-items: center;
+//         align-items: center;
+//         left: 50%;
+//         top: 50%;
+//         padding: 50px 20px !important;
+//         width: 400px !important;
+//         height: auto !important;
+//         background: #fff;
+//         border-radius: 20px;
+//         box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+//         z-index: 101;
+//         transform: translate(-50%, -50%);
+//     }
+//     h2 {
+//         padding: 0;
+//         margin: 0 !important;
+//         width: 100%;
+//         text-align: center;
+//         font-family: var(--font-desc);
+//         font-size: 1rem !important;
+//         line-height: 1.125rem;
+//         letter-spacing: 0;
+//         color: #333 !important;
+//         em {
+//             display: block;
+//             margin-bottom: 40px;
+//             font: normal 400 2rem/1 var(--font-tit);
+//             i {
+//                 margin-bottom: 20px;
+//             }
+//         }
+//     }
+//     .done {
+//         position: absolute;
+//         right: 15px;
+//         top: 15px;
+//         width: 40px;
+//         height: 40px;
+//         color: #333;
+//         text-align: center;
+//         line-height: 40px;
+//         cursor: pointer;
+//     }
+// }
 </style>
