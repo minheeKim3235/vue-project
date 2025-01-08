@@ -159,7 +159,7 @@ function readAsset (id) {
   return promises.readFile(resolve(serverDir, assets$1[id].path))
 }
 
-const publicAssetBases = {"/assets/builds/meta/":{"maxAge":31536000},"/assets/builds/":{"maxAge":1},"/assets/":{"maxAge":31536000}};
+const publicAssetBases = {"/_nuxt/builds/meta/":{"maxAge":31536000},"/_nuxt/builds/":{"maxAge":1},"/_nuxt/":{"maxAge":31536000}};
 
 function isPublicAssetURL(id = '') {
   if (assets$1[id]) {
@@ -244,14 +244,14 @@ const _WDWP4y = eventHandler((event) => {
   return readAsset(id);
 });
 
-const _lazy_xMAGqU = () => import('../_/renderer.mjs');
+const _lazy_xMAGqU = () => import('../_/renderer.mjs').then(function (n) { return n.r; });
 
 const handlers = [
   { route: '', handler: _WDWP4y, lazy: false, middleware: true, method: undefined },
   { route: '/**', handler: _lazy_xMAGqU, lazy: true, middleware: false, method: undefined }
 ];
 
-const serverAssets = [{"baseName":"server","dir":"/Users/minheekim/스터디/GitHub/portfolio/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Users/minheekim/스터디/GitHub/portfolio/gh-pages/server/assets"}];
 
 const assets = createStorage();
 
@@ -295,12 +295,12 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('internal:nuxt:prerender', _47Users_47minheekim_47_4361_4467_4368_4453_4355_4469_47GitHub_47portfolio_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js({"driver":"/Users/minheekim/스터디/GitHub/portfolio/node_modules/nuxt/dist/core/runtime/nitro/cache-driver.js","base":"/Users/minheekim/스터디/GitHub/portfolio/.nuxt/cache/nitro/prerender"}));
+storage.mount('internal:nuxt:prerender', _47Users_47minheekim_47_4361_4467_4368_4453_4355_4469_47GitHub_47portfolio_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js({"driver":"/Users/minheekim/스터디/GitHub/portfolio/node_modules/nuxt/dist/core/runtime/nitro/cache-driver.js","base":"/Users/minheekim/스터디/GitHub/portfolio/gh-pages/.nuxt/cache/nitro/prerender"}));
 storage.mount('data', fsDriver({"driver":"fsLite","base":"/Users/minheekim/스터디/GitHub/portfolio/.data/kv"}));
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/minheekim/스터디/GitHub/portfolio","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/minheekim/스터디/GitHub/portfolio/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/minheekim/스터디/GitHub/portfolio/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/minheekim/스터디/GitHub/portfolio/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/minheekim/스터디/GitHub/portfolio/gh-pages","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/minheekim/스터디/GitHub/portfolio/gh-pages/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/minheekim/스터디/GitHub/portfolio/gh-pages/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/minheekim/스터디/GitHub/portfolio/gh-pages/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -688,9 +688,9 @@ function _expandFromEnv(value) {
 
 const _inlineRuntimeConfig = {
   "app": {
-    "baseURL": "/portfolio/",
-    "buildId": "432080ec-1893-4722-ae24-12aafc67cb89",
-    "buildAssetsDir": "assets",
+    "baseURL": "/",
+    "buildId": "ce7395bc-44a0-4d45-985d-250d4eaa86f6",
+    "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
   "nitro": {
@@ -699,17 +699,17 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
-      "/assets/builds/meta/**": {
+      "/_nuxt/builds/meta/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"
         }
       },
-      "/assets/builds/**": {
+      "/_nuxt/builds/**": {
         "headers": {
           "cache-control": "public, max-age=1, immutable"
         }
       },
-      "/assets/**": {
+      "/_nuxt/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"
         }
