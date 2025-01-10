@@ -2,11 +2,11 @@
 export default defineNuxtConfig({
   ssr: false, 
   nitro : {
-  preset : 'github-pages' 
+    preset : 'github-pages'
   },
   app: {
-    baseURL: process.env.NODE_ENV === "production" ? "/portfolio/" : "/",
-    buildAssetsDir: "assets",
+    baseURL: '/portfolio/', // baseURL: '/<repository>/'
+    buildAssetsDir: 'assets',
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },

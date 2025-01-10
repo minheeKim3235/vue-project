@@ -4,7 +4,6 @@ node_modules/
 # 빌드 결과물 폴더는 포함하지 않음
 dist/
 build/
-.output/
 
 # 환경 변수 파일
 .env
